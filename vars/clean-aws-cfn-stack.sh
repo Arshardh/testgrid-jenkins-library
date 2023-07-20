@@ -37,7 +37,7 @@ do
     --query "StackSummaries[?CreationTime < '${date_12H}'].{StackName:StackName}"` \
     ;
     do
-        if [[ "$f" != "eksctl-testgrid-eks-cluster-nodegroup-ng-1" ]]; then
+        if [ "$f" != "eksctl-testgrid-eks-cluster-nodegroup-ng-1" ]; then
           echo "deleting stack --region $region --stack-name $f"
           AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws cloudformation delete-stack --region $region --stack-name $f
         fi
